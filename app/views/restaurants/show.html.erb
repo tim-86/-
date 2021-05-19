@@ -1,0 +1,16 @@
+<h1>Welcome to the <%= @restaurant.name %></h1>
+<p>it is in  <%= @restaurant.address %> </p>
+<p>and its category is <%= @restaurant.category %> </p>
+
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+  <div>
+    <li class="list-group-item"><%= review.content %></li>
+    <li class="list-group-item"><%= review.rating %></li>
+    </div>
+  <% end %>
+</ul>
+
+<p> <%= link_to("Give this dump a rating", new_restaurant_review_path(@restaurant))  %> </p>
+<p> <%= link_to("Back to All Restaurants", restaurants_path) %> </p>
+

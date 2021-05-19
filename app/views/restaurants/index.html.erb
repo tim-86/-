@@ -1,0 +1,14 @@
+<div class="banner">
+<h1>This is all the crappy restaurants to avoid</h1>
+</div>
+<div class="container">
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <div>
+      <li> <%= link_to(restaurant.name, restaurant_path(restaurant)) %></p></li>
+    </div>
+  <% end %>
+</ul>
+
+<%= link_to("Create a new shitty restaurant", new_restaurant_path) %>
+</div>
