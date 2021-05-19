@@ -1,14 +1,19 @@
-<div class="banner">
-<h1>This is all the crappy restaurants to avoid</h1>
+<div class="page-header text-center background">
+  <h1>This is all the crappy restaurants to avoid</h1>
 </div>
-<div class="container">
-<ul>
-  <% @restaurants.each do |restaurant| %>
-    <div>
-      <li> <%= link_to(restaurant.name, restaurant_path(restaurant)) %></p></li>
+
+
+
+</div>
+<% @restaurants.each do |restaurant| %>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1495753379358-73c76ccd644b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=810&q=80" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"> <%= restaurant.name %> </h5>
+      <p class="card-text"> <%= restaurant.category %> </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
-  <% end %>
-</ul>
+  </div>
+<% end %>^
 
 <%= link_to("Create a new shitty restaurant", new_restaurant_path) %>
-</div>
